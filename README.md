@@ -2,6 +2,8 @@
 
 RubyJobScout is an automated data pipeline and web application designed to scrape, normalize, and display remote programming job postings.
 
+![RubyJobScout Demo](/demo_small.gif)
+
 ## 🚀 Features
 
 - **Automated Scraping:** Automatically fetches the latest remote programming jobs from the We Work Remotely RSS feed.
@@ -74,20 +76,23 @@ Because RSS feeds often group data or hide it in the description, the script fea
    bun install
    ```
 
-### Running the Application
+### 🚀 How to Run the Application
 
-1. **Start the Frontend Dev Server:**
-   From the `frontend` directory, start the Vite server.
+To run the full stack locally, you need to start the Svelte frontend dev server. The Ruby scraper can be triggered directly from the web interface.
+
+1. **Start the Frontend Web App:**
+   From the `frontend` directory, start the Vite server using Bun.
    ```bash
+   cd frontend
    bun run dev
    ```
-   *The server will typically start at `http://localhost:5173`.*
+   *The web app will start and be available at `http://localhost:5173`.*
 
-2. **Scraping Data:**
-   - **Via the UI:** Simply click the "Scrape New Jobs" button in the web app. The Vite server will intercept the API command and run the Ruby script for you automatically.
-   - **Via CLI:** If you prefer, you can manually run the scraper from the terminal:
+2. **Scraping New Job Data:**
+   - **Via the Web UI (Recommended):** Open the app in your browser (`http://localhost:5173`) and click the **"Scrape New Jobs"** button. The frontend will automatically run the backend Ruby script to fetch the latest data and update the UI in real-time.
+   - **Via the Terminal (Manual):** If you prefer to manually fetch data without the UI, you can run the Ruby scraper script directly from your terminal:
      ```bash
      cd backend
-     ruby scraper.rb
+     bundle exec ruby scraper.rb
      ```
-     This will generate/update the `frontend/public/jobs.json` file.
+     This will locally fetch the RSS feed, normalize the data, and update the `frontend/public/jobs.json` file.
