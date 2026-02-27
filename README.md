@@ -2,7 +2,7 @@
 
 RubyJobScout is an automated data pipeline and web application designed to scrape, normalize, and display remote programming job postings.
 
-![RubyJobScout Demo](./demo_small.gif)
+![RubyJobScout Demo](./demo_tiny.gif)
 
 ## 🚀 Features
 
