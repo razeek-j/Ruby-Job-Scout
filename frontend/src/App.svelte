@@ -21,7 +21,6 @@
   async function loadJobs() {
     isLoading = true;
     try {
-      // Add a timestamp to bypass Vite static caching
       const response = await fetch(`/jobs.json?t=${Date.now()}`);
       if (response.ok) {
         const text = await response.text();
